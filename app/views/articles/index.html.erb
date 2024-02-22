@@ -1,0 +1,10 @@
+<div class="mx-auto">
+    <div class="mx-5">
+      <% @articles.each do |article| %>
+        <%= link_to article_path(article), class: "link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" do %>
+          <p class='fs-1'><%= article.title %></p>
+        <% end %>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus quam eum dolorum mollitia unde odit ipsam, architecto et modi nobis, doloribus culpa at ipsum illum accusamus ad, tenetur rerum totam!</p>
+      <% end %>
+    </div>
+</div>
