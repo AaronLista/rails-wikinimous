@@ -13,9 +13,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params_article)
-    @article.save
-
-    redirect_to article_path(@article)
+    if @article.save
+      redirect_to article_path(@article)
+    else
+      render :new, status: :unprocesable_entity
+    end
   end
 
   def edit
@@ -24,9 +26,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(params_article)
-
-    redirect_to article_path(@article)
+    if @article.update(params_article)
+      redirect_to article_path(@article)
+    else
+      render :edit, status: :unprocesable_entity
+    end
   end
 
   def destroy
