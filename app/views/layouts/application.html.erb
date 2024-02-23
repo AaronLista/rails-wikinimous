@@ -12,12 +12,7 @@
   </head>
 
   <body>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <%= link_to "wikinimous", articles_path, class: "navbar-brand" %>
-        <%= link_to "new article", new_article_path, class: "navbar-brand" %>
-      </div>
-    </nav>
+  <%= render "share/navbar" %>
     <div class="container">
       <div class="d-flex justify-content-center">
         <div class="m-5 w-75">
